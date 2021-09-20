@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <!-- CSS only -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body class="d-flex flex-column">
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+            <symbol id="home" viewBox="0 0 16 16">
+                <path
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"
+                />
+            </symbol>
+            <symbol id="search" viewBox="0 0 16 16">
+                <path
+                    stroke-width="10"
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+            </symbol>
+            <symbol id="home" viewBox="0 0 16 16">
+                <path
+                    fill-rule="evenodd"
+                    d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+                />
+                <path
+                    fill-rule="evenodd"
+                    d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
+                />
+            </symbol>
+            <symbol id="cart" viewBox="0 0 16 16">
+                <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                />
+            </symbol>
+            <symbol id="cart-plus" viewBox="0 0 16 16">
+                <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                <path
+                    d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                />
+            </symbol>
+            <symbol id="contact" viewBox="0 0 16 16">
+                <path
+                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                />
+            </symbol>
+            <symbol id="mail" viewBox="0 0 16 16">
+                <path
+                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"
+                />
+            </symbol>
+
+            <symbol id="x" viewBox="0 0 16 16">
+                <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                />
+            </symbol>
+            <symbol id="github" viewBox="0 0 16 16">
+                <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+                />
+            </symbol>
+            <symbol id="back" viewBox="0 0 16 16">
+                <path
+                    fill-rule="evenodd"
+                    d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+            </symbol>
+        </svg>
+
+        <div class="flex-fill d-flex flex-column overflow-auto">
+            <header class="navbar navbar-expand-md">
+                <div class="container-fluid flex-nowrap">
+                    <a href="#" class="navbar-brand me-0">
+                        <img
+                            src="logo.png"
+                            class="me-2 mb-2"
+                            style="width: 2rem; height: 2rem"
+                            onerror="this.src='img/shopping-bag.png'"
+                        />
+                        <span class="mobileHide me-3" id="brandName"></span>
+                    </a>
+                    <div class="input-group searchBar">
+                        <input
+                            class="form-control"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                            onkeydown="searchBarEnter(this)"
+                        />
+                        <button
+                            class="btn btn-main px-3 px-md-4"
+                            type="submit"
+                            onclick="addKeywords(this.parentNode.querySelector('.form-control').value)"
+                        >
+                            <svg width="1.2rem" height="1.2rem">
+                                <use xlink:href="#search"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-grow-0 mobileHide" id="headerSupportedContent">
+                        <ul class="nav supportedContent" id="supportedContent">
+                            <li class="d-md-none">
+                                <a role="button" class="nav-link" onclick="closeOtherSupPanel()">
+                                    <svg class="mx-auto mb-1 d-block" width="2rem" height="2rem">
+                                        <use xlink:href="#home"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a role="button" class="nav-link position-relative" onclick="togglePanel(this);">
+                                    <svg class="mx-auto mb-1 d-block" width="2rem" height="2rem" viewBox="0 0 16 16">
+                                        <use xlink:href="#cart"></use>
+                                    </svg>
+                                    <div id="cartIconNumber" class="badge cartIconNumber"></div>
+                                </a>
+                                <div class="supportedPanel cartPanel">
+                                    <div class="supportedPanelHeader">
+                                        <p class="mb-0 fs-5">Cart</p>
+                                        <a
+                                            class="mobileHide"
+                                            role="button"
+                                            onclick="this.parentNode.parentNode.classList.remove('active')"
+                                        >
+                                            <svg width="2rem" height="2rem">
+                                                <use xlink:href="#x"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                    <div class="cartList" id="cartContainer">
+                                        <template id="cartTemplate">
+                                            <div class="cartItem">
+                                                <input
+                                                    class="form-control cartNum todo"
+                                                    type="number"
+                                                    pattern="[0-9]*"
+                                                    min="0"
+                                                    step="1"
+                                                    placeholder="0"
+                                                    onchange="cartItemNumChange(this)"
+                                                />
+                                                <div class="cartItemName todo"></div>
+                                                <div class="todo text-end" style="width: 5rem"></div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                    <button
+                                        class="btn btn-main disabled"
+                                        id="cartTotal"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#confirmOrder"
+                                    >
+                                        Go to checkout!
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <a role="button" class="nav-link" onclick="togglePanel(this);">
+                                    <svg class="mx-auto mb-1 d-block" width="2rem" height="2rem" viewBox="0 0 16 16">
+                                        <use xlink:href="#contact"></use>
+                                    </svg>
+                                </a>
+                                <div class="supportedPanel fs-5">
+                                    <div class="supportedPanelHeader">
+                                        <p class="mb-0">Contact</p>
+                                        <a
+                                            class="mobileHide"
+                                            role="button"
+                                            onclick="this.parentNode.parentNode.classList.remove('active')"
+                                        >
+                                            <svg width="2rem" height="2rem">
+                                                <use xlink:href="#x"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="m-auto">
+                                        <a class="d-block mb-3 text-decoration-none" href="mailto: eric91343@gmail.com">
+                                            <svg width="1em" height="1em" role="img">
+                                                <use xlink:href="#mail"></use>
+                                            </svg>
+                                            eric91343@gmail.com
+                                        </a>
+                                        <a
+                                            class="d-block mb-3 text-decoration-none"
+                                            href="https://github.com/hsin19"
+                                            target="_blank"
+                                        >
+                                            <svg width="1em" height="1em" role="img">
+                                                <use xlink:href="#github"></use>
+                                            </svg>
+                                            hsin19
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-fill d-flex flex-column">
+                <div id="loading" class="flex-fill d-flex flex-column justify-content-center color-primary">
+                    <h4 class="text-center mb-3 font-monospace">Loading</h4>
+                    <div class="lds-ellipsis mx-auto">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div id="searchTag" class="d-flex mx-2 mx-md-4"></div>
+                <div id="productsContainer" class="productsContainer mx-md-4 visually-hidden">
+                    <template id="productTemplate">
+                        <div class="product card">
+                            <img class="card-img-top productImg todo" onerror="this.src='img/no-image.png'" />
+                            <div class="productContent">
+                                <div class="d-flex justify-content-between align-bottom mb-2">
+                                    <h5 class="productPrice todo"></h5>
+                                    <p class="productNum todo"></p>
+                                </div>
+                                <div class="productText todo"></div>
+                            </div>
+                            <div class="px-3 py-2 d-flex">
+                                <div class="input-group me-3">
+                                    <button
+                                        class="btn btn-outline-secondary"
+                                        type="button"
+                                        onclick="inputSet(this,false);"
+                                    >
+                                        -
+                                    </button>
+                                    <input
+                                        class="productNumInput form-control todo"
+                                        type="number"
+                                        pattern="[0-9]*"
+                                        min="0"
+                                        step="1"
+                                        placeholder="0"
+                                    />
+                                    <button
+                                        class="btn btn-outline-secondary"
+                                        type="button"
+                                        onclick="inputSet(this,true);"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                                <button class="btn btn-main" type="button" onclick="addToCart(this)">
+                                    <svg class="mx-auto mb-1" width="2rem" height="1.5rem" viewBox="0 0 16 16">
+                                        <use xlink:href="#cart-plus"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div class="mt-auto">
+                    <ul class="nav justify-content-center light-word">
+                        <li class="nav-item">
+                            <p class="mb-2">葉信賢, Eric Yeh</p>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link p-0 light-word" href="https://github.com/hsin19">
+                                <svg width="1em" height="1em" role="img">
+                                    <use xlink:href="#github"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+
+        <div class="modal fade" id="confirmOrder" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered mobileM-0">
+                <div class="modal-content checkoutPanel">
+                    <div class="checkoutHeader">
+                        <a class="ms-3 d-md-none" role="button" data-bs-dismiss="modal">
+                            <svg width="2em" height="2em" role="img">
+                                <use xlink:href="#back"></use>
+                            </svg>
+                        </a>
+                        <h5 class="modal-title me-auto ms-3">Confirm Order</h5>
+                        <a class="me-3 mobileHide" role="button" data-bs-dismiss="modal">
+                            <svg width="2em" height="2em" role="img">
+                                <use xlink:href="#x"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="checkoutBody">
+                        <div class="checkoutContent">
+                            <table class="table table-striped table-borderless orderTable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 2em">#</th>
+                                        <th scope="col">Product</th>
+                                        <th scope="col" style="width: 4em; text-align: end">Quantity</th>
+                                        <th scope="col" style="width: 6em; text-align: end">SubTotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="orderTableContent"></tbody>
+                            </table>
+                        </div>
+                        <div class="checkoutFooter">
+                            <p class="price"></p>
+                            <button
+                                type="button"
+                                class="btn btn-main ms-3"
+                                data-bs-target="#completeOrder"
+                                data-bs-toggle="modal"
+                                data-bs-dismiss="modal"
+                            >
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="completeOrder" tabindex="-1" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered mobileM-0">
+                <div class="modal-content checkoutPanel">
+                    <div class="checkoutHeader">
+                        <a
+                            class="ms-3 d-md-none"
+                            role="button"
+                            data-bs-dismiss="modal"
+                            data-bs-target="#confirmOrder"
+                            data-bs-toggle="modal"
+                        >
+                            <svg width="2em" height="2em" role="img">
+                                <use xlink:href="#back"></use>
+                            </svg>
+                        </a>
+                        <h5 class="modal-title me-auto ms-3">Complete Order</h5>
+                        <a class="me-3 mobileHide" role="button" data-bs-dismiss="modal">
+                            <svg width="2em" height="2em" role="img">
+                                <use xlink:href="#x"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="checkoutBody">
+                        <div class="checkoutContent p-3">
+                            <form id="orderForm" onsubmit="orderFormSubmit(this); return false;" method="POST">
+                                <div class="mb-3">
+                                    <label for="orderFormCustomer" class="form-label required">Name</label>
+                                    <input
+                                        type="text"
+                                        name="customer"
+                                        id="orderFormCustomer"
+                                        class="form-control"
+                                        required
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="orderFormPhone" class="form-label required">Phone</label>
+                                    <input type=" tel" class="form-control" name="Phone" id="orderFormPhone" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="orderFormNote" class="form-label">Note</label>
+                                    <textarea
+                                        class="w-100 form-control"
+                                        name="Note"
+                                        id="orderFormNote"
+                                        rows="4"
+                                    ></textarea>
+                                </div>
+                                <input id="formSubtotal" type="hidden" name="subtotal" value="0" />
+                            </form>
+                        </div>
+                        <div class="checkoutFooter">
+                            <button
+                                type="button"
+                                class="btn btn-secondary mobileHide"
+                                data-bs-dismiss="modal"
+                                data-bs-target="#confirmOrder"
+                                data-bs-toggle="modal"
+                            >
+                                Back
+                            </button>
+                            <p class="price"></p>
+                            <button type="submit" form="orderForm" class="btn btn-main ms-3">Place Order</button>
+                        </div>
+                    </div>
+                    <div class="loadingMask">
+                        <div class="spinner-border" role="status">
+                            <!-- <span class="visually-hidden">Loading...</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="refreshAlert" tabindex="-1" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered mobileM-0">
+                <div class="modal-content checkoutPanel">
+                    <div class="checkoutBody justify-content-center p-5">
+                        <h3 class="text-center mb-4" id="refreshMsg"></h3>
+                        <button type="button" class="btn btn-main mx-auto" onclick="window.location.reload()">
+                            OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobileSupportedContent" class="d-md-none mobileMenu"></div>
+        <div class="message"></div>
+
+        <script>
+            let products = [];
+            let cart = [];
+            let searchWords = [];
+            let setting;
+
+            window.addEventListener("DOMContentLoaded", getSetting);
+            window.addEventListener("resize", setSupportedContentPosition);
+            window.addEventListener("DOMContentLoaded", setSupportedContentPosition);
+            window.addEventListener("resize", vhFix);
+            window.addEventListener("DOMContentLoaded", vhFix);
+            window.addEventListener("DOMContentLoaded", setBrandName);
+            window.addEventListener("DOMContentLoaded", loadSellList);
+
+            function getSetting() {
+                fetch("setting.json")
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            return Promise.reject(response.status + " " + response.statusText);
+                        }
+                    })
+                    .then(data => (setting = data))
+                    .catch(error => {
+                        setting = error;
+                    });
+            }
+
+            async function setBrandName() {
+                for (let i = 0; i < 5; i++) {
+                    if (setting) break;
+                    await timeout(200);
+                }
+                let brand = setting?.brand;
+                if (brand) {
+                    document.getElementById("brandName").textContent = brand;
+                } else {
+                    document.getElementById("brandName").textContent = "Order Site";
+                }
+                let title = setting?.title;
+                if (title) {
+                    document.title = title;
+                }
+            }
+
+            async function loadSellList() {
+                for (let i = 0; i < 16; i++) {
+                    if (setting) break;
+                    if (i === 15) setting = "Reading setting timed out.";
+                    await timeout(200);
+                }
+                let url = setting?.url;
+                if (!url) {
+                    requestToRefresh(setting);
+                    return;
+                } else if (url == "test") {
+                    faKeLoad();
+                    return;
+                }
+
+                fetch(url)
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            return Promise.reject(response.status + " " + response.statusText);
+                        }
+                    })
+                    .then(data => addProductDom(data))
+                    .catch(error => {
+                        requestToRefresh(error);
+                    });
+
+                function addProductDom(data) {
+                    products = data;
+                    let productsContainer = document.getElementById("productsContainer");
+                    let t = productsContainer.querySelector("#productTemplate");
+                    let todo = t.content.querySelectorAll(".todo");
+                    for (let product of products) {
+                        todo[0].src = product.Image;
+                        todo[1].textContent = product.Price.toLocaleString();
+                        todo[2].textContent = product.Quantity;
+                        todo[3].textContent = product.Product;
+                        todo[4].max = product.Quantity;
+                        productsContainer.appendChild(t.content.cloneNode(true));
+                    }
+
+                    document.querySelector("#loading").classList.add("visually-hidden");
+                    productsContainer.classList.remove("visually-hidden");
+                }
+            }
+
+            function timeout(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            function faKeLoad(avgNum = 50) {
+                let productsContainer = document.getElementById("productsContainer");
+                let t = productsContainer.querySelector("#productTemplate");
+                let todo = t.content.querySelectorAll(".todo");
+                products = [];
+                while (true) {
+                    let temp = {
+                        Price: Math.round(Math.random() * 10000),
+                        Quantity: Math.round(Math.random() * 1000),
+                        Product: (Math.random() + 1).toString(36).substring(7),
+                        Image: "",
+                    };
+                    todo[0].src = temp.Image;
+                    todo[1].textContent = temp.Price.toLocaleString();
+                    todo[2].textContent = temp.Quantity;
+                    todo[3].textContent = temp.Product;
+                    todo[4].max = temp.Quantity;
+                    products.push(temp);
+                    productsContainer.appendChild(t.content.cloneNode(true));
+                    if (Math.random() * avgNum < 1) break;
+                }
+                setTimeout(function () {
+                    document.querySelector("#loading").classList.add("visually-hidden");
+                    productsContainer.classList.remove("visually-hidden");
+                }, Math.random() * 2000);
+            }
+
+            function setSupportedContentPosition() {
+                let content = document.querySelector("#supportedContent");
+                if (window.matchMedia("(min-width: 48em)").matches)
+                    document.querySelector("#headerSupportedContent").appendChild(content);
+                else document.querySelector("#mobileSupportedContent").appendChild(content);
+            }
+
+            function vhFix() {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty("--vh", `${vh}px`);
+            }
+
+            function orderFormSubmit(el) {
+                const formData = new FormData(el);
+                let data = Object.fromEntries(formData.entries());
+                data.products = [...cart];
+                sentOrder(data);
+            }
+
+            async function sentOrder(data) {
+                let url = setting?.url;
+                if (!url) {
+                    requestToRefresh(setting);
+                    return;
+                } else if (url == "test") {
+                    faKeLoad();
+                    return;
+                }
+                document.querySelector(".loadingMask").classList.add("active");
+
+                await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "text/plain",
+                    },
+                    body: JSON.stringify(data),
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.text();
+                        } else {
+                            return Promise.reject(response.status + " " + response.statusText);
+                        }
+                    })
+                    .then(data => requestToRefresh(data))
+                    .catch(error => {
+                        requestToRefresh(error);
+                    });
+                document.querySelector(".loadingMask").classList.remove("active");
+                return;
+            }
+
+            function requestToRefresh(msg) {
+                document.querySelectorAll(".modal").forEach(el => bootstrap.Modal.getOrCreateInstance(el).hide());
+                let el = document.getElementById("refreshAlert");
+                el.querySelector("#refreshMsg").textContent = msg;
+                bootstrap.Modal.getOrCreateInstance(el).show();
+            }
+
+            function inputSet(el, isUp) {
+                let ele = el.parentNode.querySelector("input[type=number]");
+                if (ele.value == "") ele.value = 0;
+                if (isUp) ele.stepUp();
+                else ele.stepDown();
+            }
+
+            function addToCart(e) {
+                let domProduct = e.parentNode.parentNode;
+                let domProductNum = domProduct.querySelector(".productNumInput");
+                let msg = ["Successfully added to the shopping cart!", 1];
+                domProductNum.setCustomValidity("");
+                if (!domProductNum.reportValidity()) return;
+                let name = domProduct.querySelector(".productText").textContent;
+                let num = +domProductNum.value;
+                if (num == "" || num == "0") {
+                    domProductNum.setCustomValidity("Please enter the purchase quantity.");
+                    domProductNum.reportValidity();
+                    return;
+                }
+                let productInCart = cart.find(e => e.name == name);
+                if (productInCart) {
+                    const max = domProductNum.max;
+                    if (max == productInCart.num) {
+                        addMessage(`The quantity in the cart has reached the purchaseable number of ${max}!`, 3);
+                        return;
+                    } else if (max - productInCart.num < num) {
+                        msg[0] = `Only add ${
+                            max - productInCart.num
+                        } piece to the shopping cart, because the quantity in the cart has reached the purchaseable number of ${max}.`;
+                        msg[1] = 2;
+                        num = max;
+                    } else num += productInCart.num;
+                    productInCart.num = num;
+                } else {
+                    cart.push({
+                        name: name,
+                        num: num,
+                    });
+                }
+                addMessage(...msg);
+                cartRefresh();
+            }
+
+            function closeOtherSupPanel(e) {
+                document.querySelectorAll(".supportedPanel.active").forEach(panel => {
+                    if (!e || !panel.isSameNode(e)) panel.classList.remove("active");
+                });
+            }
+
+            function togglePanel(e) {
+                let supPanel = e.parentNode.querySelector(".supportedPanel");
+                supPanel.classList.toggle("active");
+                closeOtherSupPanel(supPanel);
+            }
+
+            function cartItemNumChange(element) {
+                element.setCustomValidity("");
+                if (!element.reportValidity()) return;
+                let cartItemDom = element.parentNode;
+                let name = cartItemDom.querySelector(".cartItemName").textContent;
+                let cartIndex = cart.findIndex(e => e.name == name);
+                if (element.value == 0 || element.value == "") {
+                    cart.splice(cartIndex, 1);
+                } else cart[cartIndex].num = element.value;
+                cartRefresh();
+            }
+
+            function cartRefresh() {
+                let cartDom = document.getElementById("cartContainer");
+                cartDom.querySelectorAll(":scope > *:not(template)").forEach(e => e.remove());
+                let t = cartDom.querySelector("#cartTemplate");
+                let todo = t.content.querySelectorAll(".todo");
+                let total = 0;
+                let subtotal;
+                for (let item of cart) {
+                    todo[0].value = item.num;
+                    todo[0].max = products.find(e => e.Product == item.name).Quantity;
+                    todo[1].textContent = item.name;
+                    subtotal = item.num * products.find(e => e.Product == item.name).Price;
+                    todo[2].textContent = "$" + subtotal.toLocaleString();
+                    cartDom.appendChild(t.content.cloneNode(true));
+                    total += subtotal;
+                }
+                let totalDom = document.getElementById("cartTotal");
+                if (total != 0) {
+                    totalDom.textContent = "Total $" + total.toLocaleString() + ", Go to checkout!";
+                    totalDom.classList.remove("disabled");
+                } else {
+                    totalDom.textContent = "Go to checkout!";
+                    totalDom.classList.add("disabled");
+                }
+                document.querySelector("#cartIconNumber").textContent =
+                    cart.length == 0 ? "" : cart.length > 99 ? "99+" : cart.length;
+            }
+
+            function addMessage(msg, type = 1) {
+                const MsgType = {
+                    1: "alert-success",
+                    2: "alert-warning",
+                    3: "alert-danger",
+                };
+                let dom = document.querySelector(".message");
+                let div = document.createElement("div");
+                div.classList.add("alert", MsgType[type]);
+                div.textContent = msg;
+                document.querySelector(".message").appendChild(div);
+                div.addEventListener("animationend", () => div.remove());
+                div.addEventListener("click", () => div.remove());
+            }
+
+            function addKeywords(keyword) {
+                keyword = keyword.trim().toLowerCase();
+                if (keyword == "") return;
+                if (searchWords.findIndex(el => el == keyword) != -1) {
+                    addMessage("Keyword already exists!", 2);
+                    return;
+                }
+                searchWords.push(keyword);
+                document.getElementById(
+                    "searchTag"
+                ).innerHTML += `<a role="button" class="searchTag" onclick="searchTagRemove(this)">${keyword}<svg width="1.5em" height="1.5em"><use xlink:href="#x"></use></svg></a>`;
+                search();
+            }
+
+            function searchTagRemove(e) {
+                searchWords.splice(
+                    searchWords.findIndex(el => el == e.textContent),
+                    1
+                );
+                e.remove();
+                search();
+            }
+
+            function search() {
+                document.querySelectorAll(".product").forEach(element => {
+                    for (let word of searchWords) {
+                        if (!element.querySelector(".productText").textContent.toLowerCase().includes(word)) {
+                            element.classList.add("d-none");
+                            return;
+                        }
+                    }
+                    element.classList.remove("d-none");
+                });
+            }
+
+            function searchBarEnter(e) {
+                if (event.key === "Enter") {
+                    addKeywords(e.value);
+                }
+            }
+
+            let confirmOrderPanel = document.getElementById("confirmOrder");
+            confirmOrderPanel.addEventListener("show.bs.modal", function (event) {
+                let table = document.getElementById("orderTableContent");
+                table.innerHTML = "";
+                let row = 1,
+                    temp,
+                    total = 0;
+                cart.forEach(e => {
+                    temp = e.num * products.find(i => i.Product == e.name).Price;
+                    table.innerHTML +=
+                        `<th scope="row">${row++}</th><td>${e.name}</td><td>${e.num}</td>` +
+                        `<td>${"$" + temp.toLocaleString()}</td>`;
+                    total += temp;
+                });
+                document.querySelectorAll(".price").forEach(el => (el.textContent = "$" + total.toLocaleString()));
+                document.getElementById("formSubtotal").value = total;
+            });
+            confirmOrderPanel.addEventListener("shown.bs.modal", () => closeOtherSupPanel());
+        </script>
+
+        <!-- JavaScript Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
