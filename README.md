@@ -21,7 +21,7 @@ Welcome to do any test.
 
 ## Built With
 
--   vanilla javascript
+-   Vanilla JavaScript
 -   [Google Apps Script](https://developers.google.com/apps-script)
 -   [Bootstrap 5](https://getbootstrap.com)
 
