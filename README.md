@@ -1,8 +1,15 @@
 ## Order Site
 
-A small but complete ordering website.
+Use google sheet as the server side, a small but complete ordering website.
 
-## How to build this site
+## DEMO
+
+Welcome to do any test.
+
+-   Front end: [https://hsin19.github.io/orderSite](https://hsin19.github.io/orderSite)
+-   Back end: [Google Sheets](https://docs.google.com/spreadsheets/d/1FVqxeygKUQh3-hr0ESbJOhcVo_mYfj1L07dclFuizUs/edit#gid=1734984684)
+
+## How to build
 
 There are two parts that need to be built: Google sheets and front end
 
@@ -25,3 +32,9 @@ There are two parts that need to be built: Google sheets and front end
     -   title(Optional): Website Title Tag
 3.  (Optional)Modify the favicon.ico, img/logo.png.
 4.  (Optional)Modify html such as contact information, footer , etc.
+
+## How to use
+
+### Backend (Google sheets)
+
+`If`
