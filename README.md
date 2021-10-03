@@ -16,7 +16,7 @@ There are two parts that need to be built: Google sheets and front end
 
 ### front end
 
-1.  Host all file in [folder GoogleAppsScript](GoogleAppsScript)
+1.  Host all file in [folder docs](docs
     > Recommended platform: Netlify, github page, etc.
 2.  Edit setting.json
     -   url: [web app URL](#url)
