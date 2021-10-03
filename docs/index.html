@@ -437,9 +437,7 @@
                 <div class="modal-content checkoutPanel">
                     <div class="checkoutBody justify-content-center p-5">
                         <h3 class="text-center mb-4" id="refreshMsg"></h3>
-                        <button type="button" class="btn btn-main mx-auto" onclick="window.location.reload()">
-                            OK
-                        </button>
+                        <button type="button" class="btn btn-main mx-auto" onclick="refresh()">OK</button>
                     </div>
                 </div>
             </div>
@@ -801,6 +799,12 @@
                 document.getElementById("formSubtotal").value = total;
             });
             confirmOrderPanel.addEventListener("shown.bs.modal", () => closeOtherSupPanel());
+
+            let refreshAlertPanel = document.getElementById("refreshAlert");
+            refreshAlertPanel.addEventListener("hidden.bs.modal", refresh);
+            function refresh() {
+                window.location.reload();
+            }
         </script>
 
         <!-- JavaScript Bundle with Popper -->
