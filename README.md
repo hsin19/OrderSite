@@ -1,4 +1,4 @@
-## Order Site
+# Order Site
 
 A small but complete ordering website.
 
