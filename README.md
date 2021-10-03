@@ -11,7 +11,7 @@ Welcome to do any test.
 
 ## Features
 
-### Use google Sheets, No Server Required!
+### Use Google Sheets, No Server Required!
 
 ![Show Google Sheets](img/googleSheets.gif)
 
@@ -35,7 +35,7 @@ There are two parts that need to be built: Google sheets and front end
 2. Tools > Script editor
 3. Add all script and html from [folder GoogleAppsScript](GoogleAppsScript)
 4. Deploy Web app and record the <span id="url">web app URL</span>
-5. Go back to google sheets and reorganize. The menu bar will have a new item `Order Site`, and then select `Create System` and the system will automatically build.
+5. Go back to google sheets and refresh. The menu bar will have a new item `Order Site`, and then select `Create System` and the system will automatically build.
 
 ### Front End
 
