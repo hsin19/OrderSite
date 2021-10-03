@@ -16,10 +16,12 @@ There are two parts that need to be built: Google sheets and front end
 
 ### front end
 
-1.  Host all file in [folder docs](docs
-    > Recommended platform: Netlify, github page, etc.
+1.  Host all file in [folder docs](docs > Recommended platform: Netlify, github page, etc.
+    . Host all file in [folder docs](docs > Recommended platform: Netlify, github page, etc.
 2.  Edit setting.json
     -   url: [web app URL](#url)
         > https://script.google.com/macros/s/YOUR_Deployment_ID/exec
-    -   brand(Optional): bran
-    -   title(Optional):
+    -   brand(Optional): Website Name
+    -   title(Optional): Website Title Tag
+3.  (Optional)Modify the favicon.ico, img/logo.png.
+4.  (Optional)Modify html such as contact information, footer , etc.
